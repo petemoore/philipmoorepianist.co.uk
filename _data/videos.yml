@@ -13,44 +13,49 @@
     - type: youtube
       id: SfYEkk9nir4
       start: 937
-      caption: "Pagodes"
+      caption: "Debussy Estampes — Pagodes"
     - type: youtube
       id: SfYEkk9nir4
       start: 2052
-      caption: "La soirée dans Grenade"
+      caption: "Debussy Estampes — La soirée dans Grenade"
 
 - section: "LSO St Luke's, March 2018"
   items:
     - type: youtube
       id: lDUExDorW5I
+      caption: "John Adams: Roll Over Beethoven, I. Allegro molto"
     - type: youtube
       id: yaIJkeOafck
+      caption: "John Adams: Roll Over Beethoven, II. Andantino"
     - type: youtube
       id: q7VVzj7HY4E
+      caption: "Her Sanctuary (Joe Locke)"
 
-- section: ""
+- section: "Other Performances"
   items:
     - type: youtube
       id: Fbp3v-YFdHc
       start: 72
-      caption: "Petrushka, Barbican, September 2017"
+      caption: "Petrushka — Barbican, September 2017"
     - type: youtube
       id: qvsO5yessy8
       start: 573
-      caption: "LSO St Luke's, October 2022"
+      caption: "Stravinsky Petrushka — LSO St Luke's, October 2022"
     - type: youtube
       id: cT-HultsSa4
-      caption: "Tokyo Opera City, March 2017"
+      caption: "Steve Reich: Quartet — Tokyo Opera City, March 2017"
     - type: youtube
       id: DDDSXmAvypg
-      caption: "LSO St Luke's, December 2016"
+      caption: "Steve Reich: Sextet — LSO St Luke's, December 2016"
     - type: youtube
       id: gYMJ3bGWTBU
-      caption: "LSO St Luke's, January 2021"
+      caption: "Stravinsky: The Soldier's Tale — LSO St Luke's, January 2021"
 
 - section: "Perth Concert Hall, March 2016"
   items:
     - type: vimeo
       id: 162058271
+      caption: "Impressions of the Sea — Debussy, arr. Beamish, La Mer"
     - type: vimeo
       id: 162269828
+      caption: "Impressions of the Sea — Ravel, Piano Trio"

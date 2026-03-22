@@ -10,26 +10,48 @@ layout: default
 {% endif %}
 
 {% if section.note %}
-<p style="font-size: 0.85rem; font-style: italic;">{{ section.note }}</p>
+<p style="font-size: 0.85rem; font-style: italic; color: var(--color-text-light);">{{ section.note }}</p>
 {% endif %}
 
+<div class="video-grid">
 {% for item in section.items %}
-<div class="video-section">
-  <div class="video-embed">
+<div class="video-card" data-type="{{ item.type }}"
+  {% if item.type == 'youtube' %}data-id="{{ item.id }}"{% if item.start %} data-start="{{ item.start }}"{% endif %}
+  {% elsif item.type == 'vimeo' %}data-id="{{ item.id }}"
+  {% elsif item.type == 'self-hosted' %}data-src="{{ item.src | relative_url }}"
+  {% endif %}>
+  <div class="video-thumb">
     {% if item.type == 'youtube' %}
-    <iframe src="https://www.youtube.com/embed/{{ item.id }}{% if item.start %}?start={{ item.start }}{% endif %}" title="{{ item.caption | default: 'Video' }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <img src="https://img.youtube.com/vi/{{ item.id }}/hqdefault.jpg" alt="{{ item.caption }}" loading="lazy">
     {% elsif item.type == 'vimeo' %}
-    <iframe src="https://player.vimeo.com/video/{{ item.id }}?dnt=1" title="{{ item.caption | default: 'Video' }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    {% elsif item.type == 'self-hosted' %}
-    <video controls>
-      <source src="{{ item.src | relative_url }}" type="video/quicktime">
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-thumb-placeholder">
+      <span>Vimeo</span>
+    </div>
+    {% else %}
+    <div class="video-thumb-placeholder">
+      <span>Video</span>
+    </div>
     {% endif %}
+    <div class="video-play-btn">
+      <svg viewBox="0 0 68 48" width="68" height="48">
+        <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="rgba(0,0,0,0.7)"/>
+        <path d="M45 24L27 14v20" fill="#fff"/>
+      </svg>
+    </div>
   </div>
-  {% if item.caption %}<p class="video-caption">{{ item.caption }}</p>{% endif %}
+  {% if item.caption %}<p class="video-card-caption">{{ item.caption }}</p>{% endif %}
 </div>
 {% endfor %}
+</div>
 
-{% unless forloop.last %}<hr>{% endunless %}
+{% unless forloop.last %}<hr style="margin: 2.5rem 0; border: none; border-top: 1px solid var(--color-border);">{% endunless %}
 {% endfor %}
+
+<!-- Modal for video playback -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-backdrop"></div>
+  <div class="video-modal-content">
+    <button class="video-modal-close" aria-label="Close">&times;</button>
+    <div class="video-modal-player"></div>
+  </div>
+</div>
