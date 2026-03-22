@@ -46,7 +46,7 @@ layout: default
 
 <h2>Concert Reviews</h2>
 
-<h4>solo/chamber</h4>
+<h3 class="reviews-subcategory">Solo / Chamber</h3>
 <div class="reviews-section">
 {% for review in site.data.reviews.concert_solo %}
 <div class="review">
@@ -56,7 +56,7 @@ layout: default
 {% endfor %}
 </div>
 
-<h4>piano duo</h4>
+<h3 class="reviews-subcategory">Piano Duo</h3>
 <div class="reviews-section">
 {% for review in site.data.reviews.concert_duo %}
 <div class="review">
@@ -68,7 +68,7 @@ layout: default
 
 <h2>Recording Reviews</h2>
 
-<h4>solo/chamber</h4>
+<h3 class="reviews-subcategory">Solo / Chamber</h3>
 <div class="reviews-section">
 {% for review in site.data.reviews.recording_solo %}
 <div class="review">
@@ -78,7 +78,7 @@ layout: default
 {% endfor %}
 </div>
 
-<h4>piano duo</h4>
+<h3 class="reviews-subcategory">Piano Duo</h3>
 <div class="reviews-section">
 {% for album in site.data.reviews.recording_duo %}
 <p><strong>{{ album.album }}</strong></p>
