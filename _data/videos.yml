@@ -1,11 +1,11 @@
 - section: "LSO St Luke's, January 2022"
   note: "By kind permission of the BBC. Video editing by Chris Rogers, Digital Projects Manager, LSO."
   items:
-    - type: self-hosted
-      src: /assets/video/Rachmaninoff_02_x264.mov
+    - type: youtube
+      id: Uk2FNImhAHE
       caption: "Rachmaninov Symphonic Dances"
-    - type: self-hosted
-      src: /assets/video/Stravinsky_03_h264_yadif.mov
+    - type: youtube
+      id: EsdyI9cvdoo
       caption: "Stravinsky Petrushka, arranged Victor Babin"
 
 - section: "LSO St Luke's, February 2019"
@@ -56,6 +56,8 @@
     - type: vimeo
       id: 162058271
       caption: "Impressions of the Sea — Debussy, arr. Beamish, La Mer"
+      note: "Embedding restricted — may need Vimeo settings updated for new domain"
     - type: vimeo
       id: 162269828
       caption: "Impressions of the Sea — Ravel, Piano Trio"
+      note: "Embedding restricted — may need Vimeo settings updated for new domain"

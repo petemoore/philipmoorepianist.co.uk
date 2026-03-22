@@ -15,18 +15,29 @@ layout: default
 
 <div class="video-grid">
 {% for item in section.items %}
+{% if item.type == 'vimeo' %}
+<a href="https://vimeo.com/{{ item.id }}" target="_blank" rel="noopener" class="video-card video-card-link">
+  <div class="video-thumb">
+    <div class="video-thumb-placeholder">
+      <span>Watch on Vimeo</span>
+    </div>
+    <div class="video-play-btn">
+      <svg viewBox="0 0 68 48" width="68" height="48">
+        <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="rgba(0,0,0,0.7)"/>
+        <path d="M45 24L27 14v20" fill="#fff"/>
+      </svg>
+    </div>
+  </div>
+  {% if item.caption %}<p class="video-card-caption">{{ item.caption }}</p>{% endif %}
+</a>
+{% else %}
 <div class="video-card" data-type="{{ item.type }}"
   {% if item.type == 'youtube' %}data-id="{{ item.id }}"{% if item.start %} data-start="{{ item.start }}"{% endif %}
-  {% elsif item.type == 'vimeo' %}data-id="{{ item.id }}"
   {% elsif item.type == 'self-hosted' %}data-src="{{ item.src | relative_url }}"
   {% endif %}>
   <div class="video-thumb">
     {% if item.type == 'youtube' %}
     <img src="https://img.youtube.com/vi/{{ item.id }}/hqdefault.jpg" alt="{{ item.caption }}" loading="lazy">
-    {% elsif item.type == 'vimeo' %}
-    <div class="video-thumb-placeholder">
-      <span>Vimeo</span>
-    </div>
     {% else %}
     <div class="video-thumb-placeholder">
       <span>Video</span>
@@ -41,6 +52,7 @@ layout: default
   </div>
   {% if item.caption %}<p class="video-card-caption">{{ item.caption }}</p>{% endif %}
 </div>
+{% endif %}
 {% endfor %}
 </div>
 
