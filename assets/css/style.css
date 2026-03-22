@@ -609,6 +609,11 @@ main > img {
   margin: 0 auto;
 }
 
+.footer-contact {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   :root { --header-height: 60px; }
