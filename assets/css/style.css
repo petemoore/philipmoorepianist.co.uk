@@ -109,6 +109,12 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 2rem 4rem;
+  overflow-x: hidden;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===== Hero Banner Image ===== */
