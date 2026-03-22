@@ -2,6 +2,8 @@
 layout: default
 title: Home
 banner_image: Z81A7621-banner.jpg
+portrait_image: hebrides-jen-owens-50.jpg
+portrait_credit: "Photo: Jen Owens Images"
 ---
 
 **Philip Moore** is originally from the Vale of Evesham. He studied at London's Royal Academy of Music with Hamish Milne. Upon leaving he was awarded the Meaker Fellowship, and was subsequently appointed an Associate of the RAM. He is a Steinway Artist.
@@ -11,6 +13,3 @@ Philip has appeared as concerto soloist with the Hallé, Academy of St. Martin i
 As a chamber musician and ensemble player, Philip has performed and broadcast throughout Europe, America and the Far East. He is a member of the Colin Currie Group, the former pianist of Hebrides Ensemble, and a frequent guest of London Sinfonietta, the Nash Ensemble and Chamber Orchestra of Europe. In 2018, he and Joseph Havlat made the first recording and gave the London premiere of John Adams's *Roll Over Beethoven* for two pianos, with subsequent performances in Tokyo (Japanese premiere) and Osaka, on tour with LSO Percussion Ensemble.
 
 In recent years Philip has enjoyed playing orchestral piano with all of the London symphony orchestras. In 2017 he joined the LSO for Sir Simon Rattle's inaugural concerts as Music Director, giving performances of *Petrushka* in London (recorded for LSO Live) and Paris.
-
-![Philip Moore]({{ '/assets/images/hebrides-jen-owens-50.jpg' | relative_url }}){:loading="lazy"}
-<span class="photo-credit">Photo: Jen Owens Images</span>

@@ -26,6 +26,23 @@
     </div>
     {% endif %}
     {{ content }}
+    {% if page.videos %}
+    {% for video in page.videos %}
+    <h4>{{ video.title }}</h4>
+    <div class="video-section">
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/{{ video.youtube_id }}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% if page.portrait_image %}
+    <img src="{{ '/assets/images/' | append: page.portrait_image | relative_url }}" alt="" loading="lazy">
+    {% if page.portrait_credit %}<span class="photo-credit">{{ page.portrait_credit }}</span>{% endif %}
+    {% endif %}
+    {% if page.bottom_image %}
+    <img src="{{ '/assets/images/' | append: page.bottom_image | relative_url }}" alt="" loading="lazy">
+    {% endif %}
   </main>
   {% include footer.html %}
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
