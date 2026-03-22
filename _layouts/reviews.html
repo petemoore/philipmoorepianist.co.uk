@@ -8,6 +8,42 @@ layout: default
 
 {{ content }}
 
+<!-- Featured quotes -->
+<div class="featured-reviews">
+{% assign featured = "Croydon Advertiser,The Sunday Times,London Evening Standard,Gramophone" | split: "," %}
+{% for source_name in featured %}
+  {% for review in site.data.reviews.concert_duo %}
+    {% if review.source == source_name %}
+<div class="review featured">
+  <div class="review-quote">{{ review.quote }}</div>
+  <div class="review-source">{{ review.source }}</div>
+</div>
+    {% break %}
+    {% endif %}
+  {% endfor %}
+  {% for review in site.data.reviews.concert_solo %}
+    {% if review.source == source_name %}
+<div class="review featured">
+  <div class="review-quote">{{ review.quote }}</div>
+  <div class="review-source">{{ review.source }}</div>
+</div>
+    {% break %}
+    {% endif %}
+  {% endfor %}
+  {% for album in site.data.reviews.recording_duo %}
+    {% for review in album.reviews %}
+      {% if review.source == source_name %}
+<div class="review featured">
+  <div class="review-quote">{{ review.quote }}</div>
+  <div class="review-source">{{ review.source }}</div>
+</div>
+      {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+</div>
+
 <h2>Concert Reviews</h2>
 
 <h4>solo/chamber</h4>

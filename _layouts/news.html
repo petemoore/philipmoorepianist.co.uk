@@ -8,6 +8,7 @@ layout: default
 
 {{ content }}
 
+<div class="news-grid">
 {% for entry in site.data.news %}
 {% if entry.type == 'spotify' %}
 <div class="news-entry">
@@ -17,11 +18,11 @@ layout: default
 </div>
 
 {% elsif entry.type == 'youtube' %}
-<div class="video-section">
+<div class="news-entry">
   <div class="video-embed">
     <iframe src="https://www.youtube.com/embed/{{ entry.youtube_id }}{% if entry.start %}?start={{ entry.start }}{% endif %}" title="{{ entry.caption | default: 'Video' }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
-  {% if entry.caption %}<p class="video-caption">{{ entry.caption }}</p>{% endif %}
+  {% if entry.caption %}<div class="caption">{{ entry.caption }}</div>{% endif %}
 </div>
 
 {% elsif entry.type == 'image_pair' %}
@@ -47,3 +48,4 @@ layout: default
 </div>
 {% endif %}
 {% endfor %}
+</div>
