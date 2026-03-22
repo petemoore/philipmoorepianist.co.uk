@@ -50,14 +50,3 @@
     - type: youtube
       id: gYMJ3bGWTBU
       caption: "Stravinsky: The Soldier's Tale — LSO St Luke's, January 2021"
-
-- section: "Perth Concert Hall, March 2016"
-  items:
-    - type: vimeo
-      id: 162058271
-      caption: "Impressions of the Sea — Debussy, arr. Beamish, La Mer"
-      note: "Embedding restricted — may need Vimeo settings updated for new domain"
-    - type: vimeo
-      id: 162269828
-      caption: "Impressions of the Sea — Ravel, Piano Trio"
-      note: "Embedding restricted — may need Vimeo settings updated for new domain"
