@@ -16,4 +16,4 @@ These are not on Spotify:
 - [Sensations of Travel, Hebrides Ensemble](https://www.delphianrecords.com/products/dcd34198){:target="_blank"}
 - [Messiaen Chamber Works, Hebrides Ensemble](https://www.linnrecords.com/recording-messiaen-chamber-works){:target="_blank"}
 
-![]({{ '/assets/images/IMG_2760.jpg' | relative_url }})
+![]({{ '/assets/images/IMG_2760.jpg' | relative_url }}){:loading="lazy"}

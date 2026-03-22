@@ -12,5 +12,5 @@ As a chamber musician and ensemble player, Philip has performed and broadcast th
 
 In recent years Philip has enjoyed playing orchestral piano with all of the London symphony orchestras. In 2017 he joined the LSO for Sir Simon Rattle's inaugural concerts as Music Director, giving performances of *Petrushka* in London (recorded for LSO Live) and Paris.
 
-![Philip Moore]({{ '/assets/images/hebrides-jen-owens-50.jpg' | relative_url }})
+![Philip Moore]({{ '/assets/images/hebrides-jen-owens-50.jpg' | relative_url }}){:loading="lazy"}
 <span class="photo-credit">Photo: Jen Owens Images</span>
