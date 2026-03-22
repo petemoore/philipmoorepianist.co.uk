@@ -1,0 +1,18 @@
+title: Philip Moore
+description: Pianist
+baseurl: "/philipmoorepianist.co.uk"
+url: "https://petemoore.github.io"
+
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts/

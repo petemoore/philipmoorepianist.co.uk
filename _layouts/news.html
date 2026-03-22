@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="hero-banner">
+  <img src="{{ '/assets/images/hebrides-jen-owens-54-banner.jpg' | relative_url }}" alt="Hebrides Ensemble">
+</div>
+
+{{ content }}
+
+{% for entry in site.data.news %}
+{% if entry.type == 'spotify' %}
+<div class="news-entry">
+  <div class="spotify-embed">
+    <iframe style="border-radius: 12px" src="https://open.spotify.com/embed/{{ entry.spotify_id }}&utm_source=oembed" width="100%" height="{{ entry.height }}" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</div>
+
+{% elsif entry.type == 'youtube' %}
+<div class="video-section">
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/{{ entry.youtube_id }}{% if entry.start %}?start={{ entry.start }}{% endif %}" title="{{ entry.caption | default: 'Video' }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  {% if entry.caption %}<p class="video-caption">{{ entry.caption }}</p>{% endif %}
+</div>
+
+{% elsif entry.type == 'image_pair' %}
+<div class="news-entry">
+  <div class="image-pair">
+    {% for img in entry.images %}
+    <img src="{{ '/assets/images/' | append: img | relative_url }}" alt="" loading="lazy">
+    {% endfor %}
+  </div>
+  {% if entry.caption or entry.date %}
+  <div class="caption">{{ entry.caption }}{% if entry.date %}<br>{{ entry.date }}{% endif %}</div>
+  {% endif %}
+</div>
+
+{% else %}
+<div class="news-entry">
+  <img src="{{ '/assets/images/' | append: entry.image | relative_url }}" alt="" loading="lazy">
+  <div class="caption">
+    {{ entry.caption }}
+    {% if entry.location %}<br>{{ entry.location }}{% endif %}
+    {% if entry.date %}<br>{{ entry.date }}{% endif %}
+  </div>
+</div>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% for section in site.data.videos %}
+{% if section.section != "" %}
+<h4>{{ section.section }}</h4>
+{% endif %}
+
+{% if section.note %}
+<p style="font-size: 0.85rem; font-style: italic;">{{ section.note }}</p>
+{% endif %}
+
+{% for item in section.items %}
+<div class="video-section">
+  <div class="video-embed">
+    {% if item.type == 'youtube' %}
+    <iframe src="https://www.youtube.com/embed/{{ item.id }}{% if item.start %}?start={{ item.start }}{% endif %}" title="{{ item.caption | default: 'Video' }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    {% elsif item.type == 'vimeo' %}
+    <iframe src="https://player.vimeo.com/video/{{ item.id }}?dnt=1" title="{{ item.caption | default: 'Video' }}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    {% elsif item.type == 'self-hosted' %}
+    <video controls>
+      <source src="{{ item.src | relative_url }}" type="video/quicktime">
+      Your browser does not support the video tag.
+    </video>
+    {% endif %}
+  </div>
+  {% if item.caption %}<p class="video-caption">{{ item.caption }}</p>{% endif %}
+</div>
+{% endfor %}
+
+{% unless forloop.last %}<hr>{% endunless %}
+{% endfor %}

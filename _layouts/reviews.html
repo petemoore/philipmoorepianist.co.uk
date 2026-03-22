@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="hero-banner">
+  <img src="{{ '/assets/images/hebrides-ensemble-banner.jpg' | relative_url }}" alt="Hebrides Ensemble">
+</div>
+
+{{ content }}
+
+<h2>Concert Reviews</h2>
+
+<h4>solo/chamber</h4>
+<div class="reviews-section">
+{% for review in site.data.reviews.concert_solo %}
+<div class="review">
+  <div class="review-source">{{ review.source }}</div>
+  <div class="review-quote">{{ review.quote }}</div>
+</div>
+{% endfor %}
+</div>
+
+<h4>piano duo</h4>
+<div class="reviews-section">
+{% for review in site.data.reviews.concert_duo %}
+<div class="review">
+  <div class="review-source">{{ review.source }}</div>
+  <div class="review-quote">{{ review.quote }}</div>
+</div>
+{% endfor %}
+</div>
+
+<h2>Recording Reviews</h2>
+
+<h4>solo/chamber</h4>
+<div class="reviews-section">
+{% for review in site.data.reviews.recording_solo %}
+<div class="review">
+  <div class="review-source">{{ review.source }}</div>
+  <div class="review-quote">{{ review.quote }}</div>
+</div>
+{% endfor %}
+</div>
+
+<h4>piano duo</h4>
+<div class="reviews-section">
+{% for album in site.data.reviews.recording_duo %}
+<p><strong>{{ album.album }}</strong></p>
+{% for review in album.reviews %}
+<div class="review">
+  <div class="review-source">{{ review.source }}</div>
+  <div class="review-quote">{{ review.quote }}</div>
+</div>
+{% endfor %}
+{% endfor %}
+</div>

@@ -1,0 +1,56 @@
+- section: "LSO St Luke's, January 2022"
+  note: "By kind permission of the BBC. Video editing by Chris Rogers, Digital Projects Manager, LSO."
+  items:
+    - type: self-hosted
+      src: /assets/video/Rachmaninoff_02_x264.mov
+      caption: "Rachmaninov Symphonic Dances"
+    - type: self-hosted
+      src: /assets/video/Stravinsky_03_h264_yadif.mov
+      caption: "Stravinsky Petrushka, arranged Victor Babin"
+
+- section: "LSO St Luke's, February 2019"
+  items:
+    - type: youtube
+      id: SfYEkk9nir4
+      start: 937
+      caption: "Pagodes"
+    - type: youtube
+      id: SfYEkk9nir4
+      start: 2052
+      caption: "La soirée dans Grenade"
+
+- section: "LSO St Luke's, March 2018"
+  items:
+    - type: youtube
+      id: lDUExDorW5I
+    - type: youtube
+      id: yaIJkeOafck
+    - type: youtube
+      id: q7VVzj7HY4E
+
+- section: ""
+  items:
+    - type: youtube
+      id: Fbp3v-YFdHc
+      start: 72
+      caption: "Petrushka, Barbican, September 2017"
+    - type: youtube
+      id: qvsO5yessy8
+      start: 573
+      caption: "LSO St Luke's, October 2022"
+    - type: youtube
+      id: cT-HultsSa4
+      caption: "Tokyo Opera City, March 2017"
+    - type: youtube
+      id: DDDSXmAvypg
+      caption: "LSO St Luke's, December 2016"
+    - type: youtube
+      id: gYMJ3bGWTBU
+      caption: "LSO St Luke's, January 2021"
+
+- section: "Perth Concert Hall, March 2016"
+  items:
+    - type: vimeo
+      id: 162058271
+    - type: vimeo
+      id: 162269828

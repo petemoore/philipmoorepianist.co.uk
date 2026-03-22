@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-title">Philip Moore</a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" role="navigation">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+      <a href="{{ '/news/' | relative_url }}" {% if page.url == '/news/' %}class="active"{% endif %}>News</a>
+      <a href="{{ '/video/' | relative_url }}" {% if page.url == '/video/' %}class="active"{% endif %}>Video</a>
+      <a href="{{ '/recordings/' | relative_url }}" {% if page.url == '/recordings/' %}class="active"{% endif %}>Recordings</a>
+      <a href="{{ '/reviews/' | relative_url }}" {% if page.url == '/reviews/' %}class="active"{% endif %}>Reviews</a>
+      <a href="{{ '/piano-duo/' | relative_url }}" {% if page.url == '/piano-duo/' %}class="active"{% endif %}>Piano Duo</a>
+    </nav>
+  </div>
+</header>
