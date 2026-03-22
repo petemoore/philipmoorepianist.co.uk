@@ -109,7 +109,6 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 2rem 4rem;
-  overflow-x: hidden;
 }
 
 /* Prevent content images from overflowing, but not hero banners */
