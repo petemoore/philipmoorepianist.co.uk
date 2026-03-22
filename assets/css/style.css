@@ -112,6 +112,7 @@ main {
   overflow-x: hidden;
 }
 
+/* Prevent content images from overflowing, but not hero banners */
 main img {
   max-width: 100%;
   height: auto;
@@ -129,6 +130,7 @@ main img {
 
 .hero-banner img {
   width: 100%;
+  max-width: none;
   height: 350px;
   object-fit: cover;
   object-position: center;
