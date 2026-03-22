@@ -124,16 +124,12 @@ main img {
   margin-left: calc(-50vw + 50%);
   margin-top: -3rem;
   margin-bottom: 3rem;
-  overflow: hidden;
-  max-height: 350px;
 }
 
 .hero-banner img {
   width: 100%;
   max-width: none;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
 }
 
@@ -360,8 +356,7 @@ main > img {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
 
-  .hero-banner { margin-top: -2rem; max-height: 200px; }
-  .hero-banner img { height: 200px; }
+  .hero-banner { margin-top: -2rem; }
 
   .image-pair {
     grid-template-columns: 1fr;
