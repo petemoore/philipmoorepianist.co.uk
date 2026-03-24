@@ -17,7 +17,7 @@
   --font-heading: 'Work Sans', sans-serif;
 
   /* Layout — Go theme welcoming style with viewport-basis 657 */
-  --max-width: 42rem;
+  --max-width: 960px;
   --max-width-wide: 82rem;
   --viewport-basis: 657;
   --transition-speed: 0.3s;
