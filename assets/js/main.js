@@ -123,12 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('click', function() {
       openVideo(card);
     });
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openVideo(card);
-      }
-    });
   });
 
   // Close modal
