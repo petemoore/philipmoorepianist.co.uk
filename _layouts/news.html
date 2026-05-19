@@ -13,7 +13,7 @@ layout: default
 {% if entry.type == 'spotify' %}
 <div class="news-entry">
   <div class="spotify-embed">
-    <iframe style="border-radius: 12px" src="https://open.spotify.com/embed/{{ entry.spotify_id }}&utm_source=oembed" width="100%" height="{{ entry.height }}" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius: 12px" src="https://open.spotify.com/embed/{{ entry.spotify_id }}{% if entry.spotify_id contains '?' %}&{% else %}?{% endif %}utm_source=oembed" width="100%" height="{{ entry.height | default: 152 }}" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </div>
 
@@ -33,18 +33,39 @@ layout: default
     {% endfor %}
   </div>
   {% if entry.caption or entry.date %}
-  <div class="caption">{{ entry.caption }}{% if entry.date %}<br>{{ entry.date }}{% endif %}</div>
+  <div class="caption">
+    {% if entry.caption %}{{ entry.caption | markdownify }}{% endif %}
+    {% if entry.date %}<p class="news-meta">{{ entry.date }}</p>{% endif %}
+  </div>
   {% endif %}
 </div>
 
 {% else %}
-<div class="news-entry">
+<div class="news-entry{% if entry.layout == 'wide' %} news-entry-wide{% endif %}">
   <img src="{{ '/assets/images/' | append: entry.image | relative_url }}" alt="" loading="lazy">
   <div class="caption">
-    {{ entry.caption }}
-    {% if entry.location %}<br>{{ entry.location }}{% endif %}
-    {% if entry.date %}<br>{{ entry.date }}{% endif %}
+    {% if entry.caption %}{{ entry.caption | markdownify }}{% endif %}
+    {% if entry.location %}<p class="news-meta">{{ entry.location }}</p>{% endif %}
+    {% if entry.date %}<p class="news-meta">{{ entry.date }}</p>{% endif %}
   </div>
+  {% if entry.media %}
+  <div class="news-media-list">
+    {% for media in entry.media %}
+    {% if media.type == 'spotify' %}
+    <div class="news-media news-media-spotify">
+      <iframe style="border-radius: 12px" src="https://open.spotify.com/embed/{{ media.spotify_id }}{% if media.spotify_id contains '?' %}&{% else %}?{% endif %}utm_source=oembed" width="100%" height="{{ media.height | default: 152 }}" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    {% elsif media.type == 'youtube' %}
+    <div class="news-media">
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/{{ media.youtube_id }}{% if media.start %}?start={{ media.start }}{% endif %}" title="{{ media.caption | default: 'Video' }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      {% if media.caption %}<div class="media-caption">{{ media.caption | markdownify }}</div>{% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>
 {% endif %}
 {% endfor %}

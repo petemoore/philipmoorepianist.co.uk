@@ -39,7 +39,10 @@
   date: "June 2023"
 
 - image: news/IMG_3190.jpg
-  caption: "Film cameras at the Roundhouse Chalk Farm and a London orchestra in attendance... that's all I'm allowed to say for now. Update August 2023: [now I can reveal](https://youtu.be/qZ9DaB7xRZs)"
+  caption: |-
+    Film cameras at the Roundhouse Chalk Farm and a London orchestra in attendance... that's all I'm allowed to say for now.
+
+    Update August 2023: [now I can reveal](https://youtu.be/qZ9DaB7xRZs)
   date: "June 2023"
 
 - image: news/IMG_3039.jpg
@@ -64,10 +67,10 @@
 - image: news/5109c08a.jpg
   caption: "My youngest grabbing some piano time in the lunch break at Abbey Road, during recording sessions with the Colin Currie Group."
   date: "November 2022"
-
-- type: spotify
-  spotify_id: "album/6HZhntV7m1uixTGpszQggZ?si=R8abFBYQTeu4xE9uNk1I7g"
-  height: 352
+  media:
+    - type: spotify
+      spotify_id: "album/6HZhntV7m1uixTGpszQggZ?si=R8abFBYQTeu4xE9uNk1I7g"
+      height: 352
 
 - image: news/IMG_2519.jpg
   caption: "Carnegie Hall with Colin Currie Group."
@@ -96,6 +99,7 @@
 - image: news/IMG_1524.jpg
   caption: "Reich Sextet at Elbphilharmonie with Colin Currie Group."
   date: "October 2021"
+  layout: wide
 
 - image: news/IMG_0325.jpg
   caption: "Singapore with London Sinfonietta."
@@ -108,23 +112,22 @@
 - image: news/rattle-bear-hug.jpg
   caption: "A much-appreciated bear hug from SSR, after my LSO debut playing Petrushka. Barbican."
   date: "September 2017"
-
-- type: spotify
-  spotify_id: "track/4zojq6RKwihKomGAIhOkdU?si=903a84e697944b9c"
-  height: 152
-
-- type: youtube
-  youtube_id: Fbp3v-YFdHc
-  start: 72
-  caption: "Petrushka, Barbican, September 2017"
+  media:
+    - type: spotify
+      spotify_id: "album/1kojG90LaD1b3mnbziR37S"
+      height: 352
+    - type: youtube
+      youtube_id: Fbp3v-YFdHc
+      start: 72
+      caption: "Petrushka, Barbican, September 2017"
 
 - image: news/Attachment-1.jpg
   caption: "Recording Peter Maxwell Davies with the wonderful Zoë Beyers, Edinburgh."
   date: "August 2017"
-
-- type: spotify
-  spotify_id: "track/5Ran2ntsPnANU1p4ZgK9Pi?si=38d6af94cd8348a4"
-  height: 152
+  media:
+    - type: spotify
+      spotify_id: "album/1L49EHsXqaQUEmcJzOkOIt"
+      height: 352
 
 - image: news/20170512_170804.jpg
   caption: "With CCG at the newly-opened Elbphilharmonie (cost 866 million €). No idea I'd packed the perfect rehearsal shirt!"
@@ -136,9 +139,10 @@
 - image: news/IMG_2383.jpg
   caption: "Backstage at Opera City Tokyo with the great man."
   date: "March 2017"
-
-- type: youtube
-  youtube_id: cT-HultsSa4
+  media:
+    - type: youtube
+      youtube_id: cT-HultsSa4
+      caption: "Steve Reich: Quartet at Tokyo Opera City"
 
 - image: news/IMG_2084.jpg
   caption: "Kirkwall Harbour just before midnight – the end of a Hebrides Ensemble stint at St Magnus Festival. Little had we guessed that the next day would usher in such a new and difficult dawn..."
@@ -147,10 +151,10 @@
 - image: news/IMG_2047.jpg
   caption: "Happy faces, having finished recording Quartet at AIR Studios."
   date: "May 2016"
-
-- type: spotify
-  spotify_id: "track/2QBY8NL8a0HVS0pSGaudBD?si=1a68f46b6fee4223"
-  height: 152
+  media:
+    - type: spotify
+      spotify_id: "album/3OYBkotNxn2AZEyliWQ1i7"
+      height: 352
 
 - image: news/IMG_2031.jpg
   caption: "Post-concert wind down with Huw Watkins and Simon Crawford-Phillips. Rotterdam."
