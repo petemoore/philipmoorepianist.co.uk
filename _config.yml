@@ -12,7 +12,11 @@ defaults:
       layout: "default"
 
 exclude:
+  - .bundle
   - Gemfile
   - Gemfile.lock
   - README.md
   - scripts/
+  - vendor
+  - vendor/
+  - vendor/bundle

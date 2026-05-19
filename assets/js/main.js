@@ -47,11 +47,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = '';
   }
 
-  // Attach click handlers to all video cards
-  var cards = document.querySelectorAll('.video-card');
+  // Attach handlers to cards that open the in-page video modal.
+  var cards = document.querySelectorAll('.video-card[data-type]');
   cards.forEach(function(card) {
     card.addEventListener('click', function() {
       openVideo(card);
+    });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openVideo(card);
+      }
     });
   });
 

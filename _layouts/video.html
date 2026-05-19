@@ -16,7 +16,7 @@ layout: default
 <div class="video-grid">
 {% for item in section.items %}
 {% if item.type == 'vimeo' %}
-<a href="https://vimeo.com/{{ item.id }}" target="_blank" rel="noopener" class="video-card video-card-link">
+<a href="https://vimeo.com/{{ item.id }}" target="_blank" rel="noopener" class="video-card video-card-link"{% if item.caption %} aria-label="{{ item.caption | escape }}"{% endif %}>
   <div class="video-thumb">
     <div class="video-thumb-placeholder">
       <span>Watch on Vimeo</span>
@@ -31,13 +31,14 @@ layout: default
   {% if item.caption %}<p class="video-card-caption">{{ item.caption }}</p>{% endif %}
 </a>
 {% else %}
-<div class="video-card" data-type="{{ item.type }}"
+<button type="button" class="video-card" data-type="{{ item.type }}"
+  {% if item.caption %}aria-label="{{ item.caption | escape }}"{% else %}aria-label="Play video"{% endif %}
   {% if item.type == 'youtube' %}data-id="{{ item.id }}"{% if item.start %} data-start="{{ item.start }}"{% endif %}
   {% elsif item.type == 'self-hosted' %}data-src="{{ item.src | relative_url }}"
   {% endif %}>
   <div class="video-thumb">
     {% if item.type == 'youtube' %}
-    <img src="https://img.youtube.com/vi/{{ item.id }}/hqdefault.jpg" alt="{{ item.caption }}" loading="lazy">
+    <img src="https://img.youtube.com/vi/{{ item.id }}/hqdefault.jpg" alt="" loading="lazy">
     {% else %}
     <div class="video-thumb-placeholder">
       <span>Video</span>
@@ -51,7 +52,7 @@ layout: default
     </div>
   </div>
   {% if item.caption %}<p class="video-card-caption">{{ item.caption }}</p>{% endif %}
-</div>
+</button>
 {% endif %}
 {% endfor %}
 </div>
