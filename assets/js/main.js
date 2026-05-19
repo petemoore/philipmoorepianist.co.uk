@@ -11,6 +11,76 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  var newsGrid = document.querySelector('.news-grid');
+  if (newsGrid) {
+    var entries = Array.prototype.slice.call(newsGrid.querySelectorAll(':scope > .news-entry'));
+    var twoColumnQuery = window.matchMedia('(min-width: 769px)');
+
+    function renderNewsEntries() {
+      var fragment = document.createDocumentFragment();
+      var columns;
+      var columnIndex = 0;
+
+      function createColumns() {
+        columns = document.createElement('div');
+        columns.className = 'news-columns';
+
+        var left = document.createElement('div');
+        left.className = 'news-column';
+
+        var right = document.createElement('div');
+        right.className = 'news-column';
+
+        columns.appendChild(left);
+        columns.appendChild(right);
+        columnIndex = 0;
+      }
+
+      function appendColumns() {
+        if (columns && (columns.children[0].children.length || columns.children[1].children.length)) {
+          fragment.appendChild(columns);
+        }
+      }
+
+      if (!twoColumnQuery.matches) {
+        entries.forEach(function(entry) {
+          fragment.appendChild(entry);
+        });
+        newsGrid.innerHTML = '';
+        newsGrid.appendChild(fragment);
+        return;
+      }
+
+      createColumns();
+
+      entries.forEach(function(entry) {
+        if (entry.classList.contains('news-entry-wide')) {
+          appendColumns();
+          fragment.appendChild(entry);
+          createColumns();
+          return;
+        }
+
+        columns.children[columnIndex % 2].appendChild(entry);
+        columnIndex += 1;
+      });
+
+      appendColumns();
+      newsGrid.innerHTML = '';
+      newsGrid.appendChild(fragment);
+    }
+
+    if (entries.length) {
+      renderNewsEntries();
+
+      if (twoColumnQuery.addEventListener) {
+        twoColumnQuery.addEventListener('change', renderNewsEntries);
+      } else if (twoColumnQuery.addListener) {
+        twoColumnQuery.addListener(renderNewsEntries);
+      }
+    }
+  }
+
   // Video thumbnail grid — click to play in modal
   var modal = document.getElementById('videoModal');
   if (!modal) return;

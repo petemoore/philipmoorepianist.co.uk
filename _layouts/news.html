@@ -40,6 +40,21 @@ layout: default
   {% endif %}
 </div>
 
+{% elsif entry.type == 'image_stack' %}
+<div class="news-entry">
+  {% for item in entry.items %}
+  <div class="image-stack-item">
+    <img src="{{ '/assets/images/' | append: item.image | relative_url }}" alt="" loading="lazy">
+    {% if item.caption or item.date %}
+    <div class="caption">
+      {% if item.caption %}{{ item.caption | markdownify }}{% endif %}
+      {% if item.date %}<p class="news-meta">{{ item.date }}</p>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
 {% else %}
 <div class="news-entry{% if entry.layout == 'wide' %} news-entry-wide{% endif %}">
   <img src="{{ '/assets/images/' | append: entry.image | relative_url }}" alt="" loading="lazy">

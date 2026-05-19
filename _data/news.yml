@@ -45,12 +45,13 @@
     Update August 2023: [now I can reveal](https://youtu.be/qZ9DaB7xRZs)
   date: "June 2023"
 
-- image: news/IMG_3039.jpg
-  caption: "Elbphilharmonie Hamburg looking gloriously resplendent in the spring sunshine... this is what can happen when there is the vision and courage to create something spectacular for the arts! COE tour."
-  date: "April 2023"
-
-- image: news/IMG_3040.jpg
-  caption: "not your average dressing room"
+- type: image_stack
+  items:
+    - image: news/IMG_3039.jpg
+      caption: "Elbphilharmonie Hamburg looking gloriously resplendent in the spring sunshine... this is what can happen when there is the vision and courage to create something spectacular for the arts! COE tour."
+      date: "April 2023"
+    - image: news/IMG_3040.jpg
+      caption: "not your average dressing room"
 
 - image: news/2abe2e61.jpg
   caption: "RFH rehearsal with London Sinfonietta for the brilliant Reich/Richter."
@@ -95,11 +96,6 @@
 - image: news/IMG_1844.jpg
   caption: "A sunny morning stroll in Santa Barbara with Catherine Edwards during LSO California tour."
   date: "March 2022"
-
-- image: news/IMG_1524.jpg
-  caption: "Reich Sextet at Elbphilharmonie with Colin Currie Group."
-  date: "October 2021"
-  layout: wide
 
 - image: news/IMG_0325.jpg
   caption: "Singapore with London Sinfonietta."
@@ -182,3 +178,8 @@
 - image: news/07062008165.jpg
   caption: "Sultry Central Park NY with Huw Watkins, playing Stravinksy with Michael Clark Company."
   date: "June 2008"
+
+- image: news/IMG_1524.jpg
+  caption: "Reich Sextet at Elbphilharmonie with Colin Currie Group."
+  date: "October 2021"
+  layout: wide
